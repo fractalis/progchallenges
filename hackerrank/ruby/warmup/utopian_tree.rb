@@ -27,9 +27,7 @@ t = gets.to_i
 (0...t).each do |i|
   cycles = gets.to_i
   height = 1
-  (1..cycles).each do |c|
-    height = (c%2==0) ? height+1 : (height*2)
-  end
+  height = (cycles%2==0) ? (2**(cycles/2+1)-1) : (2**((cycles+1)/2+1)-2)
 
   puts height
 end
